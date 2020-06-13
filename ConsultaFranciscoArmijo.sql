@@ -190,4 +190,3 @@ from LiquidacionesFranciscoArmijo) T1;
 select TOTAL_IMPONIBLE * 10/100 AS 'DESCUENTO_ISAPRE' FROM(
 select Sueldo_base + Otros_ingresos as 'TOTAL_IMPONIBLE'
 from LiquidacionesFranciscoArmijo) T1;
---TOTAL DESCUENTOS PREVISIONALES
