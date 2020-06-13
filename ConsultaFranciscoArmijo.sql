@@ -53,7 +53,7 @@ insert into LiquidacionesFranciscoArmijo(
 	SYSDATETIME()
 	);
 
-	--SE AÑADEN LOS DATOS A LA TABLA usuario 1 mes 2
+--SE AÑADEN LOS DATOS A LA TABLA usuario 1 mes 2
 insert into LiquidacionesFranciscoArmijo(
 	Rut_trabajador,
 	Nombre_trabajador,
@@ -121,7 +121,7 @@ insert into LiquidacionesFranciscoArmijo(
 	SYSDATETIME()
 	);
 
-	--SE AÑADEN LOS DATOS A LA TABLA usuario 2 mes 2
+--SE AÑADEN LOS DATOS A LA TABLA usuario 2 mes 2
 insert into LiquidacionesFranciscoArmijo(
 	Rut_trabajador,
 	Nombre_trabajador,
@@ -153,3 +153,41 @@ insert into LiquidacionesFranciscoArmijo(
 	SYSDATETIME()
 	);
 
+--buscar informacion con respecto a los datos guardados
+select * from LiquidacionesFranciscoArmijo;
+--ASIGNACION E IMPONIBLE
+select Sueldo_base + Otros_ingresos as 'TOTAL_IMPONIBLE',
+case
+when Tramo_cargas = 'A' then  N_cargas * 12364 
+when Tramo_cargas = 'B' then  N_cargas * 7587
+when Tramo_cargas = 'C' then  N_cargas * 2398
+when Tramo_cargas IS NULL then  0
+end AS 'ASIGNACION_FAMILIAR'
+from LiquidacionesFranciscoArmijo;
+--TOTAL HABERES
+select TOTAL_IMPONIBLE + ASIGNACION_FAMILIAR AS 'TOTAL_HABERES' FROM(
+select Sueldo_base + Otros_ingresos as 'TOTAL_IMPONIBLE',
+case
+when Tramo_cargas = 'A' then  N_cargas * 12364 
+when Tramo_cargas = 'B' then  N_cargas * 7587
+when Tramo_cargas = 'C' then  N_cargas * 2398
+when Tramo_cargas IS NULL then  0
+end AS 'ASIGNACION_FAMILIAR'
+from LiquidacionesFranciscoArmijo) T1;
+--DESCUENTO AFP
+select TOTAL_IMPONIBLE * DESCUENTO AS 'DESCUENTO_AFP' FROM(
+select Sueldo_base + Otros_ingresos as 'TOTAL_IMPONIBLE',
+case
+when AFP = 'CAPITAL' then  11.44/100 
+when AFP = 'CUPRUM' then  11.48/100
+when AFP = 'HABITAT' then  11.27/100
+when AFP = 'MODELO' then  10.77/100
+when AFP = 'PLAN VITAL' then  10.41/100
+when AFP = 'PROVIDA' then  11.45/100 
+end AS 'DESCUENTO'
+from LiquidacionesFranciscoArmijo) T1;
+--DESCUENTO ISAPRE
+select TOTAL_IMPONIBLE * 10/100 AS 'DESCUENTO_ISAPRE' FROM(
+select Sueldo_base + Otros_ingresos as 'TOTAL_IMPONIBLE'
+from LiquidacionesFranciscoArmijo) T1;
+--TOTAL DESCUENTOS PREVISIONALES
