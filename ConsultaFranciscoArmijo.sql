@@ -190,3 +190,19 @@ from LiquidacionesFranciscoArmijo) T1;
 select TOTAL_IMPONIBLE * 10/100 AS 'DESCUENTO_ISAPRE' FROM(
 select Sueldo_base + Otros_ingresos as 'TOTAL_IMPONIBLE'
 from LiquidacionesFranciscoArmijo) T1;
+-- ------------------------------------
+
+create table liquidaciones (correlativo int primary key identity(1,1) not null,
+identificador2 nvarchar(14),
+rut nvarchar(10),
+nombre nvarchar(50),
+mes nvarchar(2),anio int, base int); 
+
+insert into liquidaciones(rut,nombre,mes,anio) values ('12345678-9', 'Francsico', '01',2020, 150000);
+--actualizar concatenando
+update liquidaciones set identificador2 = SUBSTRING(rut,1,8)+cast(mes as nvarchar)+cast(anio as nvarchar);
+
+--actualizar concatenando con concat
+update liquidaciones set identificador2 = concat(SUBSTRING(rut,1,8),mes,anio);
+
+update liquidaciones set base = 600000;
