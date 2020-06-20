@@ -80,4 +80,4 @@ tramo, asignacion
 '1',1
 );
 
-select codigo_salud from Tabla_salud where nombre_prevision = 'BANMEDICA';
+

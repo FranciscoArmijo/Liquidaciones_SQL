@@ -51,5 +51,11 @@ namespace LiquidacionesSqlFranciscoArmijo
             Form trabajador = new Trabajador();
             trabajador.Show();
         }
+
+        private void aPFToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form afp = new Afp();
+            afp.Show();
+        }
     }
 }

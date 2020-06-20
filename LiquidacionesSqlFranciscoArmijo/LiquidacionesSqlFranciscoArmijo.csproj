@@ -61,6 +61,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Afp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Afp.Designer.cs">
+      <DependentUpon>Afp.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -75,6 +81,9 @@
     <Compile Include="Trabajador.Designer.cs">
       <DependentUpon>Trabajador.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Afp.resx">
+      <DependentUpon>Afp.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>

@@ -49,7 +49,10 @@
             this.textSueldoBase = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.botonGuardar = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -147,6 +150,7 @@
             this.comboAFP.Name = "comboAFP";
             this.comboAFP.Size = new System.Drawing.Size(184, 24);
             this.comboAFP.TabIndex = 10;
+            this.comboAFP.SelectedIndexChanged += new System.EventHandler(this.comboAFP_SelectedIndexChanged);
             this.comboAFP.SelectionChangeCommitted += new System.EventHandler(this.comboAFP_SelectionChangeCommitted);
             // 
             // label6
@@ -194,6 +198,7 @@
             this.comboPlanSalud.Name = "comboPlanSalud";
             this.comboPlanSalud.Size = new System.Drawing.Size(160, 24);
             this.comboPlanSalud.TabIndex = 16;
+            this.comboPlanSalud.SelectedIndexChanged += new System.EventHandler(this.comboPlanSalud_SelectedIndexChanged);
             this.comboPlanSalud.SelectionChangeCommitted += new System.EventHandler(this.comboPlanSalud_SelectionChangeCommitted);
             // 
             // label9
@@ -213,6 +218,7 @@
             this.comboSalud.Name = "comboSalud";
             this.comboSalud.Size = new System.Drawing.Size(184, 24);
             this.comboSalud.TabIndex = 14;
+            this.comboSalud.SelectedIndexChanged += new System.EventHandler(this.comboSalud_SelectedIndexChanged);
             // 
             // textSueldoBase
             // 
@@ -233,18 +239,46 @@
             // 
             // botonGuardar
             // 
-            this.botonGuardar.Location = new System.Drawing.Point(396, 216);
+            this.botonGuardar.BackColor = System.Drawing.Color.DarkGray;
+            this.botonGuardar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.botonGuardar.Location = new System.Drawing.Point(308, 216);
             this.botonGuardar.Name = "botonGuardar";
-            this.botonGuardar.Size = new System.Drawing.Size(114, 44);
+            this.botonGuardar.Size = new System.Drawing.Size(255, 44);
             this.botonGuardar.TabIndex = 20;
-            this.botonGuardar.Text = "Guardar Trabajador";
-            this.botonGuardar.UseVisualStyleBackColor = true;
+            this.botonGuardar.Text = "GUARDAR TRABAJADOR";
+            this.botonGuardar.UseVisualStyleBackColor = false;
+            this.botonGuardar.Click += new System.EventHandler(this.botonGuardar_Click);
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.DarkGray;
+            this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button1.Location = new System.Drawing.Point(308, 266);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(255, 44);
+            this.button1.TabIndex = 21;
+            this.button1.Text = "MOSTRAR TRABAJADORES";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(12, 328);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.Size = new System.Drawing.Size(842, 246);
+            this.dataGridView1.TabIndex = 22;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // Trabajador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(866, 546);
+            this.ClientSize = new System.Drawing.Size(866, 586);
+            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.botonGuardar);
             this.Controls.Add(this.textSueldoBase);
             this.Controls.Add(this.label10);
@@ -270,6 +304,7 @@
             this.Load += new System.EventHandler(this.Trabajador_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -298,5 +333,7 @@
         private System.Windows.Forms.TextBox textSueldoBase;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button botonGuardar;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }

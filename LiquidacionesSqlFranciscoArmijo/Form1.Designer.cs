@@ -44,7 +44,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.lIQUIDACIONToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tRABAJADORToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aPFToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sALUDToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -203,7 +202,6 @@
             // 
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.lIQUIDACIONToolStripMenuItem,
             this.tRABAJADORToolStripMenuItem,
             this.aPFToolStripMenuItem,
             this.sALUDToolStripMenuItem});
@@ -212,12 +210,6 @@
             this.menuStrip1.Size = new System.Drawing.Size(660, 28);
             this.menuStrip1.TabIndex = 4;
             this.menuStrip1.Text = "menuStrip1";
-            // 
-            // lIQUIDACIONToolStripMenuItem
-            // 
-            this.lIQUIDACIONToolStripMenuItem.Name = "lIQUIDACIONToolStripMenuItem";
-            this.lIQUIDACIONToolStripMenuItem.Size = new System.Drawing.Size(112, 24);
-            this.lIQUIDACIONToolStripMenuItem.Text = "lIQUIDACION";
             // 
             // tRABAJADORToolStripMenuItem
             // 
@@ -230,7 +222,8 @@
             // 
             this.aPFToolStripMenuItem.Name = "aPFToolStripMenuItem";
             this.aPFToolStripMenuItem.Size = new System.Drawing.Size(48, 24);
-            this.aPFToolStripMenuItem.Text = "APF";
+            this.aPFToolStripMenuItem.Text = "AFP";
+            this.aPFToolStripMenuItem.Click += new System.EventHandler(this.aPFToolStripMenuItem_Click);
             // 
             // sALUDToolStripMenuItem
             // 
@@ -278,7 +271,6 @@
         private System.Windows.Forms.Button botonMostrar;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem lIQUIDACIONToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem tRABAJADORToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aPFToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem sALUDToolStripMenuItem;
