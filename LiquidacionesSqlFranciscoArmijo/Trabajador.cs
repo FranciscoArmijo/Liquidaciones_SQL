@@ -152,5 +152,17 @@ namespace LiquidacionesSqlFranciscoArmijo
         {
 
         }
+
+        private void sALUDToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form salud = new Salud();
+            salud.Show();
+        }
+
+        private void aFPToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form afp = new Afp();
+            afp.Show();
+        }
     }
 }

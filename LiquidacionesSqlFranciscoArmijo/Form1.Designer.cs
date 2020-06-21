@@ -230,6 +230,7 @@
             this.sALUDToolStripMenuItem.Name = "sALUDToolStripMenuItem";
             this.sALUDToolStripMenuItem.Size = new System.Drawing.Size(69, 24);
             this.sALUDToolStripMenuItem.Text = "SALUD";
+            this.sALUDToolStripMenuItem.Click += new System.EventHandler(this.sALUDToolStripMenuItem_Click);
             // 
             // Form1
             // 
