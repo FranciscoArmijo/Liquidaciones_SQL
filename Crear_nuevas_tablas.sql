@@ -80,4 +80,4 @@ tramo, asignacion
 '1',1
 );
 
-
+select nombre_trabajador, apellido_trabajador from Datos_personales;
